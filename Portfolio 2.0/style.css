@@ -1,0 +1,777 @@
+/* --------------- Réglages de base ----------------- */
+
+@font-face {
+    font-family: "Poppins-Regular" ;
+    src: url(./Poppins-Regular.ttf);
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins-Regular";
+}
+body{
+    width: 100vw;
+}
+/* --------------- Navbar ----------------- */
+
+.navbar{
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: black;
+    align-items: center;
+    height: 100px;
+    z-index: 9999;
+}
+.navbar a{
+    color: white;
+    text-transform: uppercase;
+}
+.navbar .logo{
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.navbar .nav_links ul{
+    display: flex;
+}
+.navbar .nav_links ul li{
+    margin: 0 25px;
+}
+.navbar .nav_links ul li.active a{
+    color: red;
+}
+
+@media screen and (max-width: 1020px) {
+    .nav_links{
+        display: none;
+    }
+}
+
+.navbar .menu_hamburger{
+    display: none;
+    width: 25px;
+    position: absolute;
+    top: 40px;
+    right: 25px;
+}
+
+@media screen and (max-width: 1020px) {
+    .navbar{
+        padding: 0;
+    }
+    .navbar .menu_hamburger{
+        display: block;
+    }
+    .nav_links{
+        position: absolute;
+        display: flex;
+        background-color: rgba(27, 26, 26, 0.804);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(6px);
+        margin-left: 100%;
+        
+    }
+    .nav_links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+    .navbar .nav_links ul li{
+        margin: 25px 0px;
+        font-size: 1.3em;
+    }
+}
+
+.mobile-menu{
+    margin-left: 0;
+}
+#a_propos{
+    scroll-margin-top: 150px;
+}
+#mes_projets {
+    scroll-margin-top: 100px;
+}
+#contact_me {
+    scroll-margin-top: 100px;
+}
+#section_name{
+    font-size: 1.3em;
+}
+/* --------------- Section 1 - presentation ---------------- */
+
+
+.section_1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background-color: rgb(0, 0, 0);  
+    padding-top: 100px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+    .bloc_presentation{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        height: auto;
+        margin-right: 0px;
+        background-image: url(background_presentation.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+        .presentation{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(255, 255, 255); 
+            color: rgb(0, 0, 0);
+        }
+        .name_text{
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            height: 90vh;
+           /* background-color: rgb(0, 0, 0); */
+            align-items: center;
+            color: white;
+            justify-content: center
+        }
+
+            .txt_presentation{
+                height: auto;
+                width: 100%;
+                font-size: 0.72em;
+                line-height: 2em;
+                text-align: justify;
+                text-transform: uppercase;
+                padding-right: 40px;
+                padding-left: 40px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                background-color: rgba(82, 82, 82, 0.249);
+                box-shadow: 0px 0px 30px 5px rgba(84, 148, 243, 0.795);
+                display: flex;
+            }
+            #texte{
+                height: auto;
+                width: 100%;
+
+                
+            }
+
+
+/* --------------- Section 1 - competences ---------------- */
+
+.bloc_competences{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    height: auto;
+    margin-left: 0px;
+    background-color: rgb(12, 12, 12);
+}
+    .competences{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 10vh;
+        background-color: rgb(0, 0, 0); 
+        color: white;
+        font-size: 1.1em;
+    }
+    .contain_comp{
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }   
+        
+        .bar_loading{
+            display: flex;
+            width: 50%;
+            height: 90vh;
+            background-color: white;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 2.5em;
+            background-color: rgb(12, 12, 12);
+        }
+            #txt_lang{
+                font-weight: 900;
+                color: white;
+            }  
+        
+            .progress-bar {
+                width: 100%;
+                height: 30px;
+                background-color: #858383aa;
+                border-radius: 4px;
+                position: relative;
+                margin-bottom: 10px;
+                overflow: hidden; /* Pour éviter le dépassement de la barre de progression */
+            }
+        
+        .progress {
+                height: 100%;
+                border-radius: 4px;
+                width: 0;
+                transition: width 0.3s ease;
+        }
+        
+        .percentage {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: #ffffff;
+                font-weight: bold;
+        }
+        
+        .html-progress {
+                animation: htmlProgressAnimation 1s ease-in-out forwards;
+                background-color: #4caf50;
+        }
+        
+        .css-progress {
+                animation: cssProgressAnimation 1s ease-in-out forwards;
+                background-color: #4caf50;
+        }
+        
+        .sql-progress {
+                animation: sqlProgressAnimation 1s ease-in-out forwards;
+                background-color: #4caf50;
+        }
+        
+        .php-progress {
+                animation: phpProgressAnimation 1s ease-in-out forwards;
+                background-color: #b9dc08;
+        }
+        
+        .js-progress {
+                animation: jsProgressAnimation 1s ease-in-out forwards;
+                background-color: orangered;
+        }
+        
+        .python-progress {
+                animation: pythonProgressAnimation 1s ease-in-out forwards;
+                background-color: orangered;
+        }
+        
+        @keyframes htmlProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 85%;
+            }
+        }
+        
+        @keyframes cssProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 75%;
+            }
+        }
+        
+        @keyframes sqlProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 80%;
+            }
+        }
+        
+        @keyframes phpProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 50%;
+            }
+        }
+        
+        @keyframes jsProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 25%;
+            }
+        }
+        
+        @keyframes pythonProgressAnimation {
+            0% {
+            width: 0;
+            }
+            100% {
+            width: 25%;
+            }
+        }
+                  
+      
+
+/* --------------- Section 2 - Projets ---------------- */
+
+.section_2{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0); 
+    box-sizing: border-box;
+}
+    .bloc_projets{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        background-color: rgb(255, 255, 255);
+        
+    }
+        .titre_sec{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgba(0, 0, 0, 0.952);
+            color: white;
+        }
+        .projets{
+            display: flex;
+            width: auto;
+            height: 90vh;
+            background-color: rgba(121, 120, 120, 0.779);
+        }
+            .projet_left{
+                display: flex;
+                width: 50%;
+                height: auto;
+                background-color: rgb(200, 220, 236);
+                justify-content: center;
+                align-items: center;
+                flex-direction: column
+            }
+            .projet_left a{
+                color: white;
+            }
+                #img_projet_l{
+                    width: 84%;
+                    height: auto;
+                    border-radius: 15px;
+                    box-shadow: 0px 0px 20px 10px rgba(84, 148, 243, 0.795);
+                }
+                #bouton_projet_l{
+                    width: 120px;
+                    height: 25px;
+                    background-color: rgb(30 45 71);
+                    font-weight: bold;
+                    border-radius: 15px;
+                    border: 3px;
+                    color: white;
+                }
+                #bouton_projet_l:hover {
+                    background-color: rgba(30, 45, 71, 0.603);
+                    color: rgb(255, 255, 255);
+                }
+    
+            .projet_right{
+                display: flex;
+                width: 50%;
+                height: auto;
+                background-color: rgb(0, 0, 0);
+                justify-content: center;
+                align-items: center;
+                flex-direction: column
+            }
+            .projet_right a{
+                color: black;
+            }
+                #img_projet_r{
+                    width: 85%;
+                    height: auto;
+                    border-radius: 20px;
+                    box-shadow: 0px 0px 30px 2px rgba(84, 148, 243, 0.795);
+                }
+            
+                #bouton_projet_r{
+                    width: 120px;
+                    height: 25px;
+                    background-color: rgb(255, 255, 255);
+                    font-weight: bold;
+                    border-radius: 20px;
+                    border: 3px;
+                    color: rgb(0, 0, 0);
+                }
+                #bouton_projet_r:hover {
+                    background-color: rgb(216, 212, 212);
+                    color: white;
+                }
+            
+
+
+/* --------------- Section 3 - Contact ---------------- */
+
+.section_3{
+
+    width: 100vw;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+    .bloc_contact{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: 100%;
+        background-color: rgba(32, 32, 32, 0.753);
+    }
+        .titre_contact{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 10vh;
+            background-color: rgba(0, 0, 0, 0.712);
+            color: white;
+        }
+        .contact{
+            display: flex;
+            width: 100%;
+            height: 90vh;
+            background-color: rgb(0, 0, 0);
+            justify-content: space-evenly;
+            align-items: center;
+            background-image: url(background_presentation.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+            .formulaire{
+                width: auto;
+                height: 75%;
+                color: white;
+                border-radius: 10px;
+                background-color: rgba(51, 50, 50, 0.158);
+                box-shadow: 0px 0px 100px 5px rgba(89, 92, 97, 0.644);
+            }
+                #form{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    line-height: 0.8;
+                    justify-content: center;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    padding-right: 50px;
+                    padding-left: 50px;
+                    border-left-width: 20px;
+                }
+                    #label_form{
+                        text-transform: uppercase;
+                        margin-bottom: 10px;
+                    }
+                    #input_form{
+                        width: auto;
+                        height: auto;
+                        border-radius: 5px;
+                        border: 0;
+                        
+                    }
+                    #msg_form{
+                        width: auto;
+                        height: auto;
+                        border-radius: 5px;
+                        border: 0;  
+                    }
+                    #button_form{
+                        width: 150px;
+                        height: 30px;
+                        border-radius: 5px;
+                        border: 0;
+                        font-weight: 800;
+                    }
+            .coordonees{
+                width: 25%;
+                height: 40%;
+                background-color: rgba(0, 0, 0, 0.199);
+                color: rgb(255, 255, 255);
+                border-radius: 4px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                line-height: 2;
+                border-radius: 10px;
+                box-shadow: 0px 0px 30px 10px rgba(89, 92, 97, 0.644);
+            }
+/* --------------- Footer ----------------- */
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 10vh;
+    background-color: rgba(0, 0, 0, 0.952);
+    text-align: center;
+    color: white;
+}
+
+
+/* --------------- Responsive Section 1 ----------------- */
+
+@media (max-width: 1020px) {
+    .section_1{
+        width: 100vw;
+        height: auto;
+        flex-direction: column;
+    }
+
+        .bloc_presentation{
+            width: 100%;
+            height: auto;
+        }
+            /*#section_name{
+                font-size: 1em;
+            }*/
+            .name_text{
+                width: 100%;
+                height: auto;
+                padding: 40px;
+            }
+        .bloc_competences{
+            width: 100%;
+            height: auto;
+        }
+        .bar_loading{
+            width: 40%;
+            height: auto;
+            padding-top: 20px;
+            padding-bottom: 30px;
+        }
+            #txt_lang{
+                font-weight: 900;
+            }  
+            .progress-bar{
+                height: 30px;
+                margin-bottom: 0;
+            }  
+    }
+
+/* --------------- Responsive Section 2 ----------------- */
+
+@media (max-width: 1020px) {
+    .section_2{
+        width: 100vw;
+        height: auto;
+    }
+        .bloc_projets{
+            width: 100%;
+            height: auto;
+        }
+        .projets{
+            width: 100%;
+            height: auto;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+            .projet_left{
+                width: 100%;
+                height: auto;
+                justify-content: space-evenly;
+                padding: 30px;
+            }
+                #img_projet_l{
+                    width: 55%;
+                }
+            .projet_right{
+                width: 100%;
+                height: auto;
+                justify-content: space-evenly;
+                padding: 30px;    
+            }
+                #img_projet_r{
+                    width: 55%;
+                }
+}
+
+
+/*------------------- Responsive section 3 ------------------*/
+
+@media screen and (max-width: 1020px) {
+    .section_3{
+        width: 100vw;
+        height: auto;
+    }
+        .bloc_contact{
+            width: 100%;
+            height: auto;
+        }
+            .contact{
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                padding-top: 10px;
+            }
+                .formulaire {
+                    width: 60%;
+                    height: 50%;
+                    margin: 25px;
+                }
+                    .coordonees{
+                        width: 60%;
+                        padding-top: 20px;
+                        margin: 20px;
+                    }
+                    #form{
+                        width: auto;
+                        height: auto;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        padding-left: 50px;
+                        padding-right: 50px;
+                    }
+                        #msg_form{
+                            width: 70%;
+                            height: auto;
+                            border-radius: 1ch;
+                            border: 0;
+                        }
+                        #input_form{
+                            width: 50%;
+                            border-radius: 3px;
+                            border: 0;
+                        }
+                        #button_form{
+                            font-weight: 800;
+                        }
+                        #label_form{
+                            font-size: 0.9em;
+                        }
+}
+
+@media screen and (max-width: 520px){
+    .section_3{
+    }
+        .bloc_contact{
+
+        }
+            .formulaire {
+                width: 60%;
+                height: 50%;
+                margin: 25px;
+            }
+                .coordonees{
+                    width: 60%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    font-size: 0.8em;
+                }
+                    #form{
+                        width: auto;
+                        height: auto;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        padding-left: 50px;
+                        padding-right: 50px;
+                        font-size: 0.7em;
+                    }
+                    #msg_form{
+                        width: 200px;
+                        height: auto;
+                        border-radius: 3ch;
+                        border: 0;
+                    }
+                    #input_form{
+                        width: 200px;
+                        border-radius: 3px;
+                        border: 0;
+                    }
+                    #label_form{
+                        font-size: 0.9em;
+                    }
+}
+@media screen and (max-width: 320px){
+    .section_3{
+    }
+        .bloc_contact{
+
+        }
+            .formulaire {
+                width: 80%;
+                height: 50%;
+                margin: 25px;
+            }
+                .coordonees{
+                    width: 60%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    font-size: 0.8em;
+                }
+                    #form{
+                        width: auto;
+                        height: auto;
+                        padding-top: 50px;
+                        padding-bottom: 50px;
+                        padding-left: 50px;
+                        padding-right: 50px;
+                        font-size: 0.7em;
+                    }
+                    #msg_form{
+                        width: 200px;
+                        height: auto;
+                        border-radius: 3ch;
+                        border: 0;
+                    }
+                    #input_form{
+                        width: 200px;
+                        border-radius: 3px;
+                        border: 0;
+                    }
+                    #label_form{
+                        font-size: 0.9em;
+                    }
+}
+@media screen and (max-width: 320px){
+        .footer{
+            font-size: 0.6em;
+        }
+}
+
+
+
+
+
+
